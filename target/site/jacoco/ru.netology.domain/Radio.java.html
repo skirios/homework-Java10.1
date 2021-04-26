@@ -1,113 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">statistics</a> &gt; <a href="index.source.html" class="el_package">ru.netology.domain</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology.domain;
 
-<span class="nc" id="L3">public class Radio {</span>
-<span class="nc" id="L4">    private int maxVolume = 10;</span>
-<span class="nc" id="L5">    private int minVolume = 0;</span>
-<span class="nc" id="L6">    private int currentVolume = getCurrentVolume();</span>
-<span class="nc" id="L7">    private int maxRadioStation = 9;</span>
-<span class="nc" id="L8">    private int minRadioStation = 0;</span>
-<span class="nc" id="L9">    private int currentStation = getCurrentStation();</span>
+public class Radio {
+<span class="fc" id="L4">    private int maxVolume = 10;</span>
+<span class="fc" id="L5">    private int minVolume = 0;</span>
+<span class="fc" id="L6">    private int currentVolume = getCurrentVolume();</span>
+<span class="fc" id="L7">    private int maxRadioStation = 9;</span>
+<span class="fc" id="L8">    private int minRadioStation = 0;</span>
+<span class="fc" id="L9">    private int currentStation = getCurrentStation();</span>
 
+<span class="fc" id="L11">    public Radio() {</span>
+<span class="fc" id="L12">    }</span>
+
+<span class="fc" id="L14">    public Radio(int maxVolume, int minVolume, int currentVolume, int maxRadioStation, int minRadioStation, int currentStation) {</span>
+<span class="fc" id="L15">        this.maxVolume = maxVolume;</span>
+<span class="fc" id="L16">        this.minVolume = minVolume;</span>
+<span class="fc" id="L17">        this.currentVolume = currentVolume;</span>
+<span class="fc" id="L18">        this.maxRadioStation = maxRadioStation;</span>
+<span class="fc" id="L19">        this.minRadioStation = minRadioStation;</span>
+<span class="fc" id="L20">        this.currentStation = currentStation;</span>
+<span class="fc" id="L21">    }</span>
 
     public int getMaxVolume() {
-<span class="nc" id="L13">        return maxVolume;</span>
+<span class="nc" id="L24">        return maxVolume;</span>
     }
 
     public void setMaxVolume(int maxVolume) {
-<span class="nc" id="L17">        this.maxVolume = maxVolume;</span>
-<span class="nc" id="L18">    }</span>
+<span class="nc" id="L28">        this.maxVolume = maxVolume;</span>
+<span class="nc" id="L29">    }</span>
 
     public int getMinVolume() {
-<span class="nc" id="L21">        return minVolume;</span>
+<span class="nc" id="L32">        return minVolume;</span>
     }
 
     public void setMinVolume(int minVolume) {
-<span class="nc" id="L25">        this.minVolume = minVolume;</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L36">        this.minVolume = minVolume;</span>
+<span class="nc" id="L37">    }</span>
 
     public int getCurrentVolume() {
-<span class="nc" id="L29">        return currentVolume;</span>
+<span class="fc" id="L40">        return currentVolume;</span>
     }
 
     public void setCurrentVolume(int currentVolume) {
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if (currentVolume &lt;= maxVolume) {</span>
-<span class="nc" id="L34">            this.currentVolume = currentVolume;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (currentVolume &lt;= maxVolume) {</span>
+<span class="fc" id="L45">            this.currentVolume = currentVolume;</span>
         } else {
-<span class="nc" id="L36">            currentVolume = maxVolume;</span>
+<span class="fc" id="L47">            currentVolume = maxVolume;</span>
         }
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (currentVolume &lt;= minVolume) {</span>
-<span class="nc" id="L39">            this.currentVolume = minVolume;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (currentVolume &lt;= minVolume) {</span>
+<span class="fc" id="L50">            this.currentVolume = minVolume;</span>
         }
-<span class="nc" id="L41">        this.currentVolume = currentVolume;</span>
+<span class="fc" id="L52">        this.currentVolume = currentVolume;</span>
 
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L54">    }</span>
 
     public void setCurrentVolumeUp() {
-<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (currentVolume &lt; maxVolume) {</span>
-<span class="nc" id="L47">            currentVolume ++;</span>
-        } else{
-<span class="nc" id="L49">            currentVolume = maxVolume;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (currentVolume &lt; maxVolume) {</span>
+<span class="fc" id="L58">            currentVolume++;</span>
+        } else {
+<span class="fc" id="L60">            currentVolume = maxVolume;</span>
         }
-<span class="nc" id="L51">    }</span>
+<span class="fc" id="L62">    }</span>
 
     public void setCurrentVolumeDown() {
-<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (currentVolume &gt; minVolume) {</span>
-<span class="nc" id="L55">            currentVolume--;</span>
-        } else{
-<span class="nc" id="L57">            currentVolume = minVolume;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (currentVolume &gt; minVolume) {</span>
+<span class="fc" id="L66">            currentVolume--;</span>
+        } else {
+<span class="fc" id="L68">            currentVolume = minVolume;</span>
         }
-<span class="nc" id="L59">    }</span>
+<span class="fc" id="L70">    }</span>
 
 
     public int getMaxRadioStation() {
-<span class="nc" id="L63">        return maxRadioStation;</span>
+<span class="nc" id="L74">        return maxRadioStation;</span>
     }
 
     public void setMaxRadioStation(int maxRadioStation) {
-<span class="nc" id="L67">        this.maxRadioStation = maxRadioStation;</span>
-<span class="nc" id="L68">    }</span>
+<span class="nc" id="L78">        this.maxRadioStation = maxRadioStation;</span>
+<span class="nc" id="L79">    }</span>
 
     public int getMinRadioStation() {
-<span class="nc" id="L71">        return minRadioStation;</span>
+<span class="nc" id="L82">        return minRadioStation;</span>
     }
 
     public void setMinRadioStation(int minRadioStation) {
-<span class="nc" id="L75">        this.minRadioStation = minRadioStation;</span>
-<span class="nc" id="L76">    }</span>
+<span class="nc" id="L86">        this.minRadioStation = minRadioStation;</span>
+<span class="nc" id="L87">    }</span>
 
     public int getCurrentStation() {
-<span class="nc" id="L79">        return currentStation;</span>
+<span class="fc" id="L90">        return currentStation;</span>
     }
 
     public void setCurrentStation(int currentStation) {
-<span class="nc bnc" id="L83" title="All 2 branches missed.">        if (currentStation &lt;= maxRadioStation) {</span>
-<span class="nc" id="L84">            this.currentStation = currentStation;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (currentStation &lt;= maxRadioStation) {</span>
+<span class="fc" id="L95">            this.currentStation = currentStation;</span>
         } else {
-<span class="nc" id="L86">            currentStation = maxRadioStation;</span>
+<span class="fc" id="L97">            currentStation = maxRadioStation;</span>
 
         }
-<span class="nc bnc" id="L89" title="All 2 branches missed.">        if (currentStation &lt;= minRadioStation) {</span>
-<span class="nc" id="L90">            this.currentStation = currentStation;</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        if (currentStation &lt;= minRadioStation) {</span>
+<span class="fc" id="L101">            this.currentStation = currentStation;</span>
         }
-<span class="nc" id="L92">        this.currentStation = currentStation;</span>
-<span class="nc" id="L93">    }</span>
+<span class="fc" id="L103">        this.currentStation = currentStation;</span>
+<span class="fc" id="L104">    }</span>
 
     public void setCurrentRadioStationUp() {
-<span class="nc bnc" id="L96" title="All 2 branches missed.">        if (currentStation &lt; maxRadioStation) {</span>
-<span class="nc" id="L97">            currentStation++;</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        if (currentStation &lt; maxRadioStation) {</span>
+<span class="fc" id="L108">            currentStation++;</span>
         } else {
-<span class="nc" id="L99">            currentStation = minRadioStation;</span>
+<span class="fc" id="L110">            currentStation = minRadioStation;</span>
         }
 
-<span class="nc" id="L102">    }</span>
+<span class="fc" id="L113">    }</span>
 
     public void setCurrentRadioStationDown() {
-<span class="nc bnc" id="L105" title="All 2 branches missed.">        if (currentStation &gt; minRadioStation) {</span>
-<span class="nc" id="L106">            currentStation--;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (currentStation &gt; minRadioStation) {</span>
+<span class="fc" id="L117">            currentStation--;</span>
         } else {
-<span class="nc" id="L108">            currentStation = maxRadioStation;</span>
+<span class="fc" id="L119">            currentStation = maxRadioStation;</span>
         }
-<span class="nc" id="L110">    }</span>
+<span class="fc" id="L121">    }</span>
 
 
 }
